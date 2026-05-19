@@ -1,180 +1,247 @@
 const prompts = [
   {
     numero: '01',
-    seccion: 'Resumen Ejecutivo',
+    seccion: 'Resumen ejecutivo del caso',
     archivo: '01_resumen_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
       'haz un resumen ejecutivo de la ultima vulnerabilidad encontrada en github esto es para un trabajo de la universidad por lo que debe ser serio y con lenguaje técnico, no ocupes emojis y debe tener los siguientes criterios qué pasó, cuándo, quiénes participaron, impacto',
     acepto:
-      'Se aceptó la estructura completa del resumen con los cuatro criterios solicitados y la línea de tiempo.',
+      'Se aceptó la estructura completa con los cuatro criterios solicitados y la línea de tiempo del incidente.',
     corrigio:
       'Se ajustó la terminología técnica para incluir los nombres exactos de los componentes (babeld, gitrpcd, X-Stat) que no aparecían en la respuesta inicial.',
   },
   {
     numero: '02',
-    seccion: 'Marco Normativo',
+    seccion: 'Marco normativo aplicable',
     archivo: '02_marco_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
       'necesito que en base a esté caso apliques las leyes y regulaciones chilenas aplicables es importante que sean de chile y con bases de link para verificar las fuentes',
     acepto:
       'Se aceptaron las cuatro normativas identificadas (Ley 21.459, Ley 21.663, Ley 19.628, Decreto 295) con sus artículos específicos y los links de la BCN.',
     corrigio:
-      'Se añadió la referencia al Decreto 295 como normativa complementaria, que no apareció en la respuesta inicial pero es fundamental para determinar el umbral de "efecto significativo".',
+      'Se añadió manualmente la referencia al Decreto 295 como normativa complementaria, que no apareció en la respuesta inicial pero es fundamental para determinar el umbral de efecto significativo.',
   },
   {
     numero: '03',
-    seccion: 'Tipificación de Delitos',
+    seccion: 'Tipificación de delitos',
     archivo: '03_delitos_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
       'Tipificación de delitos según la Ley 21.459, citando artículos y mapeando cada acción del atacante aplicalo al caso de la ultima vulnerabilidad de github',
     acepto:
-      'Se aceptó el análisis de subsumisión de cada acción técnica con su correspondiente artículo.',
+      'Se aceptó el análisis de subsumisión de cada acción técnica con su correspondiente artículo de la Ley 21.459.',
     corrigio:
-      'Fue necesario un segundo prompt específico para que la tabla de mapeo se renderizara en formato Markdown compatible con archivos .md, ya que la respuesta inicial presentaba la tabla en texto plano no estructurado.',
+      'Fue necesario un segundo prompt para que la tabla de mapeo se generara en formato Markdown compatible con archivos .md, ya que la respuesta inicial presentaba el contenido en texto plano sin estructura de tabla.',
   },
   {
     numero: '03b',
-    seccion: 'Tabla de Delitos (formato MD)',
+    seccion: 'Tabla de mapeo técnico-legal (formato Markdown)',
     archivo: '03_delitos_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
-      'necesito que me hagas esté cuadro de mapeo técnico compatible con archivos md para que se vean correctamente [tabla con columnas: Acción del Atacante, Verbo Rector, Artículo, Calificación Penal]',
-    acepto: 'Se aceptó la tabla en formato Markdown con las cuatro columnas y los cuatro delitos.',
+      'necesito que me hagas esté cuadro de mapea técnico compatible con archivos md para que se vean correctamente Acción del Atacante (Técnica) | Verbo Rector Afectado | Artículo Violado (Ley 21.459) | Calificación Penal Producida',
+    acepto:
+      'Se aceptó la tabla en formato Markdown con las cuatro columnas y los cuatro delitos correctamente estructurados.',
     corrigio:
-      'Se verificó que la sintaxis de la tabla fuera compatible con el renderizado en GitHub.',
+      'Se verificó manualmente que la sintaxis de la tabla fuera compatible con el renderizado en GitHub antes de incluirla en el archivo final.',
   },
   {
     numero: '04',
-    seccion: 'Comparación de Marcos',
+    seccion: 'Tabla comparativa de marcos regulatorios',
     archivo: '04_comparacion_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
       'Tabla comparativa de marcos regulatorios por industria (mínimo 3 marcos y 3 ejes). para el caso de la vulnerabilidad de github ya mencionado',
-    acepto: 'Se aceptaron los tres marcos (Ley 21.663, Ley 19.628, RAN-CMF) y los tres ejes de análisis.',
+    acepto:
+      'Se aceptaron los tres marcos (Ley 21.663, Ley 19.628, RAN-CMF) y los tres ejes de análisis: obligación de reporte, estándares técnicos y régimen de sanciones.',
     corrigio:
-      'Requirió un prompt adicional para convertir la tabla al formato Markdown correcto con las celdas de varias líneas correctamente escapadas.',
+      'Requirió un prompt adicional para convertir el contenido al formato Markdown de tabla, ya que la respuesta inicial entregó el texto sin estructura.',
+  },
+  {
+    numero: '04b',
+    seccion: 'Tabla comparativa en formato Markdown',
+    archivo: '04_comparacion_urbvic.md',
+    herramienta: 'Gemini',
+    prompt:
+      'aplica el formato md a esta tabla [tabla con las tres leyes, sus ejes de reporte, estándares técnicos y sanciones]',
+    acepto:
+      'Se aceptó la tabla final con las celdas correctamente formateadas para renderizado en GitHub.',
+    corrigio:
+      'Se revisó manualmente el alineado de columnas y se corrigieron saltos de línea dentro de celdas que rompían la estructura Markdown.',
   },
   {
     numero: '05',
-    seccion: 'Responsabilidades',
+    seccion: 'Responsabilidades legales de los actores',
     archivo: '05_responsabilidades_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
       'Actores identificados y sus responsabilidades penales, civiles y administrativas, con cita de norma para el caso de la vulnerabilidad de github',
     acepto:
-      'Se aceptaron los cuatro actores identificados y la distinción entre tipos de responsabilidad con sus citas normativas.',
+      'Se aceptaron los actores identificados y la distinción entre tipos de responsabilidad con sus citas normativas.',
     corrigio:
-      'Se añadió el actor "Wiz Research" con su eximente de responsabilidad, que no aparecía en la respuesta inicial.',
+      'Se añadió manualmente el actor Wiz Research con su eximente de responsabilidad, que no apareció en la respuesta inicial de Gemini.',
   },
   {
     numero: '06',
-    seccion: 'Datos Personales y ARCO',
+    seccion: 'Tratamiento de datos personales y derechos ARCO',
     archivo: '06_datos_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
       'Tratamiento de datos según la Ley 19.628: tipos, distinción personales/sensibles y derechos ARCO aplicado al caso de la vulnerabilidad de github',
     acepto:
-      'Se aceptó la distinción entre datos personales y sensibles con los ejemplos concretos del contexto de desarrollo de software.',
+      'Se aceptó la distinción entre datos personales y sensibles con ejemplos concretos del contexto de desarrollo de software.',
     corrigio:
-      'Se enriqueció la sección de datos sensibles con ejemplos más específicos al contexto empresarial (registros biométricos, afiliaciones sindicales) que aplicaban directamente al escenario GHES.',
+      'Se enriquecieron los ejemplos de datos sensibles con casos más específicos al escenario empresarial GHES (registros biométricos, afiliaciones sindicales) que la respuesta de Gemini no contemplaba.',
   },
   {
     numero: '07',
-    seccion: 'Conclusiones',
+    seccion: 'Conclusiones y recomendaciones',
     archivo: '07_conclusiones_urbvic.md',
-    herramienta: 'Claude (claude.ai)',
+    herramienta: 'Gemini',
     prompt:
       'Recomendaciones de seguridad y reflexión final del análisis aplicalo al caso de la vulnerabilidad de github',
     acepto:
-      'Se aceptó el enfoque de "Defensa en Capas" y la reflexión final sobre la madurez del marco legal chileno.',
+      'Se aceptó el enfoque de defensa en capas y la reflexión final sobre el marco legal chileno.',
     corrigio:
-      'Se ajustó la reflexión final para que mencionara explícitamente la Ley 21.663 y la responsabilidad activa de las organizaciones, no solo la penalización del atacante.',
+      'Se ajustó la reflexión para que mencionara explícitamente la Ley 21.663 y el deber activo de las organizaciones, no solo la penalización del atacante.',
+  },
+  {
+    numero: '08',
+    seccion: 'Construcción de la aplicación web React',
+    archivo: 'src/components/*.jsx, src/App.jsx',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'necesito que hagas un informe en base a este proyecto y con guía del documento que te enviaré. como dice ahí cada documento .md de la carpeta docs es un componente de la pagina web, sigue las instrucciones',
+    acepto:
+      'Se aceptó la estructura completa del proyecto: los 8 componentes React correspondientes a cada archivo .md, el App.jsx con navegación lateral, y todos los estilos CSS.',
+    corrigio:
+      'Se corrigió el #root del index.css que tenía un ancho fijo de 1126px que limitaba el layout de la aplicación.',
+  },
+  {
+    numero: '09',
+    seccion: 'Cambio a diseño de una sola página con scroll',
+    archivo: 'src/App.jsx, src/App.css',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'está bien pero haz que sea todo en una pagina osea que simplemente haciendo scroll puedo ir viendo todo',
+    acepto:
+      'Se aceptó el rediseño completo: eliminación del sidebar, barra de navegación superior sticky con scroll suave a cada sección, y hero introductorio con los datos del caso.',
+    corrigio:
+      'No fue necesario corregir la estructura, solo se ajustó el scroll-margin-top de las secciones para que la barra de navegación no tapara los títulos al hacer clic.',
+  },
+  {
+    numero: '10',
+    seccion: 'Aplicación de tema rojo claro y blanco',
+    archivo: 'src/index.css, src/App.css',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'continua y usa colores rojos claros y blanco',
+    acepto:
+      'Se aceptó el cambio de paleta completo: fondo blanco puro, acento rojo #c0392b, bordes y fondos en tonos rojo muy suaves, y barra roja izquierda en los títulos de sección.',
+    corrigio:
+      'Se revisaron manualmente los colores de los elementos que usaban morado (arco-purple, delito-purple) para que quedaran consistentes con el tema rojo.',
+  },
+  {
+    numero: '11',
+    seccion: 'Reorganización de la sección de prompts',
+    archivo: 'src/components/Prompts.jsx',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'organiza los promts y elimina el cuadro que dice resumen de uso en la seccion de promts, todos los promts que están en el archivo .md de promts son de gemini y agrega los promts que usé en esté chat, no uses emojis',
+    acepto:
+      'Se aceptó la reorganización completa: prompts de Gemini separados de los prompts de Claude, sin cuadro de estadísticas, sin emojis.',
+    corrigio:
+      'Pendiente de revisión.',
   },
 ]
+
+const promptsGemini = prompts.filter(p => p.herramienta === 'Gemini')
+const promptsClaude = prompts.filter(p => p.herramienta.startsWith('Claude'))
+
+function PromptCard({ p }) {
+  return (
+    <div className="prompt-card card">
+      <div className="prompt-header">
+        <span className="prompt-num">{p.numero}</span>
+        <div>
+          <p className="prompt-seccion">{p.seccion}</p>
+          <span className="prompt-archivo">{p.archivo}</span>
+        </div>
+        <span className="prompt-herramienta">{p.herramienta}</span>
+      </div>
+
+      <div className="prompt-block">
+        <p className="prompt-label">Prompt utilizado:</p>
+        <blockquote className="prompt-text">{p.prompt}</blockquote>
+      </div>
+
+      <div className="prompt-result">
+        <div className="result-acepto">
+          <div>
+            <p className="result-label">Que se acepto</p>
+            <p>{p.acepto}</p>
+          </div>
+        </div>
+        <div className="result-corrigio">
+          <div>
+            <p className="result-label">Que se corrigio</p>
+            <p>{p.corrigio}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Prompts() {
   return (
     <article className="prose-section">
-      <h1 className="section-title">Bitácora de Uso de Inteligencia Artificial</h1>
-      <p className="section-subtitle">Registro de prompts, correcciones y reflexión sobre el uso de IA</p>
+      <h1 className="section-title">Bitacora de Uso de Inteligencia Artificial</h1>
+      <p className="section-subtitle">
+        Registro de prompts, correcciones y reflexion sobre el uso de IA en el desarrollo del informe
+      </p>
 
-      <div className="card mb-6">
-        <h2 className="card-title">Resumen de Uso</h2>
-        <div className="uso-stats">
-          <div className="stat-box">
-            <span className="stat-num">{prompts.length}</span>
-            <span className="stat-label">Prompts utilizados</span>
-          </div>
-          <div className="stat-box">
-            <span className="stat-num">8</span>
-            <span className="stat-label">Secciones asistidas</span>
-          </div>
-          <div className="stat-box">
-            <span className="stat-num">Claude</span>
-            <span className="stat-label">Herramienta principal</span>
-          </div>
-        </div>
+      <div className="prompts-group">
+        <h2 className="prompts-group-title">Prompts — Gemini</h2>
+        <p className="prompts-group-desc">
+          Utilizados para generar el contenido de los archivos Markdown del informe legal.
+        </p>
+        {promptsGemini.map((p) => (
+          <PromptCard key={p.numero} p={p} />
+        ))}
       </div>
 
-      {prompts.map((p, i) => (
-        <div key={i} className="card prompt-card">
-          <div className="prompt-header">
-            <span className="prompt-num">{p.numero}</span>
-            <div>
-              <h3 className="prompt-seccion">{p.seccion}</h3>
-              <span className="prompt-archivo">{p.archivo}</span>
-            </div>
-            <span className="prompt-herramienta">{p.herramienta}</span>
-          </div>
-
-          <div className="prompt-block">
-            <p className="prompt-label">💬 Prompt utilizado:</p>
-            <blockquote className="prompt-text">{p.prompt}</blockquote>
-          </div>
-
-          <div className="prompt-result">
-            <div className="result-acepto">
-              <span className="result-icon">✅</span>
-              <div>
-                <p className="result-label">Qué se aceptó:</p>
-                <p>{p.acepto}</p>
-              </div>
-            </div>
-            <div className="result-corrigio">
-              <span className="result-icon">✏️</span>
-              <div>
-                <p className="result-label">Qué se corrigió:</p>
-                <p>{p.corrigio}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
+      <div className="prompts-group">
+        <h2 className="prompts-group-title">Prompts — Claude</h2>
+        <p className="prompts-group-desc">
+          Utilizados para construir la aplicacion web React que presenta el informe.
+        </p>
+        {promptsClaude.map((p) => (
+          <PromptCard key={p.numero} p={p} />
+        ))}
+      </div>
 
       <div className="card reflexion-ia">
-        <h2 className="card-title">Reflexión Final sobre el Uso de IA</h2>
+        <h2 className="card-title">Reflexion Final sobre el Uso de IA</h2>
         <p>
-          El uso de Claude como herramienta de asistencia resultó valioso principalmente en dos
-          dimensiones: la <strong>estructuración del análisis legal</strong> (mapear acciones
-          técnicas a artículos específicos de la Ley 21.459 requiere un nivel de especificidad que
-          la IA manejó eficientemente) y la <strong>generación del formato Markdown</strong> para
-          tablas comparativas complejas.
+          Se utilizaron dos herramientas de IA con roles diferenciados. Gemini se empleó en la
+          etapa de investigación y redacción legal, generando el contenido de los ocho archivos
+          Markdown. Claude se empleó en la etapa de desarrollo, construyendo la aplicación React
+          que presenta ese contenido.
         </p>
         <p className="mt-3">
-          Sin embargo, la herramienta requirió supervisión constante: en ningún caso se aceptó la
-          respuesta sin verificación. Las correcciones más frecuentes involucaron agregar actores
-          omitidos (Wiz Research), enriquecer ejemplos con contexto específico del caso, y reformular
-          la reflexión final para que reflejara el estándar de diligencia activa que exige la
-          legislación chilena de 2026.
+          En ningún caso se aceptó una respuesta sin revisión. Las correcciones más frecuentes
+          con Gemini fueron la adición de actores omitidos y el reformateo de tablas al estándar
+          Markdown. Con Claude, la corrección principal fue el ajuste del layout CSS para que el
+          diseño funcionara correctamente en el entorno del proyecto.
         </p>
         <p className="mt-3">
-          La calidad del análisis legal dependió en mayor medida de la investigación previa del caso
-          y del conocimiento de las normativas que de la capacidad generativa de la IA. Esta fue
-          una herramienta de productividad, no de sustitución del criterio jurídico-técnico del
-          estudiante.
+          La calidad del análisis legal dependió en mayor medida de la investigación previa del
+          caso y del conocimiento de las normativas chilenas que de la capacidad generativa de
+          las herramientas. Estas fueron instrumentos de productividad, no de sustitución del
+          criterio juridico-técnico.
         </p>
       </div>
     </article>

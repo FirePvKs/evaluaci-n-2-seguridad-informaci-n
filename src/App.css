@@ -858,3 +858,24 @@
 .delito-orange { background: rgba(230,126,34,0.1); color: #e67e22; }
 .delito-red    { background: rgba(192,57,43,0.1);  color: #c0392b; }
 .delito-purple { background: rgba(192,57,43,0.08); color: #c0392b; }
+
+/* =================== PROMPTS GROUPS =================== */
+.prompts-group {
+  margin-bottom: 40px;
+}
+
+.prompts-group-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: var(--text-h) !important;
+  margin: 0 0 4px !important;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+.prompts-group-desc {
+  font-size: 14px;
+  color: var(--text);
+  margin: 8px 0 20px !important;
+}

@@ -2,7 +2,6 @@ const recomendaciones = [
   {
     label: 'A',
     titulo: 'Gestión de Vulnerabilidades y Parcheo Automatizado',
-    icon: '🔧',
     items: [
       {
         subtitulo: 'Actualización Crítica',
@@ -19,7 +18,6 @@ const recomendaciones = [
   {
     label: 'B',
     titulo: 'Seguridad en la Cadena de Suministro de Software (DevSecOps)',
-    icon: '🔗',
     items: [
       {
         subtitulo: 'Auditoría de Hooks',
@@ -36,7 +34,6 @@ const recomendaciones = [
   {
     label: 'C',
     titulo: 'Cumplimiento de Gobernanza y Reporte Operacional',
-    icon: '📋',
     items: [
       {
         subtitulo: 'Simulacros de Reporte ANCI',

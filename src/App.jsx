@@ -48,6 +48,7 @@ export default function App() {
         <div className="hero-badge">TI3034 — Fundamentos de Seguridad de la Información</div>
         <h1 className="hero-title">Vulnerabilidad CVE-2026-3854</h1>
         <p className="hero-sub">Análisis Legal · GitHub Remote Code Execution · INACAP Valparaíso · Otoño 2026</p>
+        <p className="hero-sub">Vicente Paolo Thomás Urbina Riquelme</p>
         <div className="hero-chips">
           <span className="chip">Ley 21.459</span>
           <span className="chip">Ley 21.663</span>

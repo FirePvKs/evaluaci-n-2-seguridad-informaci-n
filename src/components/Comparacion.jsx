@@ -32,9 +32,9 @@ const marcos = [
 ]
 
 const ejes = [
-  { key: 'reporte', label: 'Eje 1: Obligación de Reporte', icon: '⏱' },
-  { key: 'estandares', label: 'Eje 2: Estándares Técnicos Exigidos', icon: '🔒' },
-  { key: 'sanciones', label: 'Eje 3: Régimen de Sanciones y Multas', icon: '⚖' },
+  { key: 'reporte', label: 'Eje 1: Obligación de Reporte'},
+  { key: 'estandares', label: 'Eje 2: Estándares Técnicos Exigidos'},
+  { key: 'sanciones', label: 'Eje 3: Régimen de Sanciones y Multas'},
 ]
 
 export default function Comparacion() {
@@ -64,9 +64,9 @@ export default function Comparacion() {
               <tr>
                 <th>Marco / Ley</th>
                 <th>Industria / Ámbito</th>
-                <th>⏱ Reporte</th>
-                <th>🔒 Estándares</th>
-                <th>⚖ Sanciones</th>
+                <th>Reporte</th>
+                <th>Estándares</th>
+                <th>Sanciones</th>
               </tr>
             </thead>
             <tbody>
