@@ -153,7 +153,19 @@ const prompts = [
     acepto:
       'Se aceptó la reorganización completa: prompts de Gemini separados de los prompts de Claude, sin cuadro de estadísticas, sin emojis.',
     corrigio:
-      'Pendiente de revisión.',
+      'Se corrigió la atribución de todos los prompts del archivo .md, que estaban incorrectamente asignados a Claude cuando correspondían a Gemini.',
+  },
+  {
+    numero: '12',
+    seccion: 'Cambio a navegación por botones en el header',
+    archivo: 'src/App.jsx, src/App.css',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'volvamos al formato de antes que al apretar un boton mostraba el contenido y solo ese contenido pero no hagas un sidebar usa los botones que ya están en el header y recuerda incluir esté promt en la pagina',
+    acepto:
+      'Se aceptó la navegación por estado con los botones del header: cada botón muestra solo la sección correspondiente, con el botón activo resaltado con borde inferior rojo.',
+    corrigio:
+      'Se eliminó el hero y la estructura de página única del rediseño anterior, volviendo al layout de contenido único por sección con botones de anterior y siguiente al pie.',
   },
 ]
 

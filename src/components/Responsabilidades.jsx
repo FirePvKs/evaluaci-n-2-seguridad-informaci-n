@@ -40,12 +40,14 @@ const actores = [
   },
   {
     nombre: 'GitHub Inc. (Proveedor de Servicio)',
+    icon: '🏢',
     color: 'actor-orange',
     descripcion:
       'Entidad responsable de la plataforma GitHub.com y del desarrollo del software GitHub Enterprise Server (GHES).',
     responsabilidades: [
       {
         tipo: 'Administrativa',
+        icon: '📋',
         items: [
           {
             norma: 'Ley 21.663, Art. 9°',
@@ -63,6 +65,7 @@ const actores = [
       },
       {
         tipo: 'Civil',
+        icon: '💼',
         items: [
           {
             norma: 'Ley 19.496',
@@ -76,12 +79,14 @@ const actores = [
   },
   {
     nombre: 'Empresas Chilenas Usuarias de GHES',
+    icon: '🏗',
     color: 'actor-blue',
     descripcion:
       'Organizaciones en Chile que operan sus propias instancias de servidor y no han aplicado los parches liberados en marzo de 2026. Calificados como Operadores de Importancia Vital (OIV).',
     responsabilidades: [
       {
         tipo: 'Administrativa',
+        icon: '📋',
         items: [
           {
             norma: 'Ley 21.663, Art. 14°',
@@ -93,6 +98,7 @@ const actores = [
       },
       {
         tipo: 'Civil',
+        icon: '💼',
         items: [
           {
             norma: 'Ley 19.628, Art. 11°',
@@ -106,12 +112,14 @@ const actores = [
   },
   {
     nombre: 'Wiz Research (Investigadores de Seguridad)',
+    icon: '🔬',
     color: 'actor-green',
     descripcion:
       'Actor que identificó la vulnerabilidad y la reportó a través del programa de Bug Bounty de GitHub.',
     responsabilidades: [
       {
         tipo: 'Eximente de Responsabilidad',
+        icon: '✅',
         items: [
           {
             norma: 'Ley 21.459, Art. 1°',

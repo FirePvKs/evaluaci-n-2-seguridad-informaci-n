@@ -79,7 +79,7 @@ export default function Resumen() {
         <h2 className="card-title">Actores Involucrados</h2>
         <div className="actors-grid">
           <div className="actor-card">
-            <div className="actor-icon"></div>
+            <div className="actor-icon">🔍</div>
             <h3>Wiz Research</h3>
             <p>
               Responsable del descubrimiento y análisis del fallo mediante herramientas de
@@ -87,7 +87,7 @@ export default function Resumen() {
             </p>
           </div>
           <div className="actor-card">
-            <div className="actor-icon"></div>
+            <div className="actor-icon">🏢</div>
             <h3>GitHub Inc. (Microsoft)</h3>
             <p>
               Entidad encargada de recibir el reporte, validar el riesgo y desarrollar los
@@ -95,7 +95,7 @@ export default function Resumen() {
             </p>
           </div>
           <div className="actor-card">
-            <div className="actor-icon"></div>
+            <div className="actor-icon">🌐</div>
             <h3>Organizaciones Afectadas</h3>
             <p>
               Administradores de TI y empresas globales que operan instancias locales de
