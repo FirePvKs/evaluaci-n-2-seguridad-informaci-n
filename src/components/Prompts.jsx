@@ -167,6 +167,19 @@ const prompts = [
     corrigio:
       'Se eliminó el hero y la estructura de página única del rediseño anterior, volviendo al layout de contenido único por sección con botones de anterior y siguiente al pie.',
   },
+  ,
+  {
+    numero: '13',
+    seccion: 'Ajuste visual de tarjetas',
+    archivo: 'src/App.css',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'al hacer hover en una tarjeta de contenido el borde izquierdo rojo se aclara, quita eso y los bordes de las tarjetas quítales el border radius, incluye este promt en el proyecto',
+    acepto:
+      'Se eliminó el efecto hover que cambiaba el color del borde al pasar el cursor sobre las tarjetas, y se removió el border-radius de todas las tarjetas de contenido principal.',
+    corrigio:
+      'Se verificó que el cambio aplicara también a las tarjetas de marcos regulatorios, responsabilidades, datos ARCO y recomendaciones, no solo a la clase .card base.',
+  },
 ]
 
 const promptsGemini = prompts.filter(p => p.herramienta === 'Gemini')
