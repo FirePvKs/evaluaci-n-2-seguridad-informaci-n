@@ -180,6 +180,19 @@ const prompts = [
     corrigio:
       'Se verificó que el cambio aplicara también a las tarjetas de marcos regulatorios, responsabilidades, datos ARCO y recomendaciones, no solo a la clase .card base.',
   },
+  ,
+  {
+    numero: '14',
+    seccion: 'Reemplazo de emojis por iconos Material Icons',
+    archivo: 'src/components/*.jsx, index.html',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'https://fonts.google.com/icons quita todos los emojis y usa iconos de esta pagina que te envié, incluye este promt en el proyecto',
+    acepto:
+      'Se aceptó el reemplazo completo de todos los emojis en Resumen, Marco, Comparacion, Responsabilidades y Conclusiones por iconos de la librería Material Icons de Google, cargada vía CDN en index.html.',
+    corrigio:
+      'Se creó un componente Icon.jsx reutilizable para simplificar el uso de los iconos en todos los componentes y mantener consistencia en el tamaño y estilo.',
+  },
 ]
 
 const promptsGemini = prompts.filter(p => p.herramienta === 'Gemini')

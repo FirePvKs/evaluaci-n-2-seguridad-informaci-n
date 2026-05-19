@@ -1,53 +1,28 @@
+import Icon from './Icon'
+
 const recomendaciones = [
   {
-    label: 'A',
+    icon: 'build',
     titulo: 'Gestión de Vulnerabilidades y Parcheo Automatizado',
-    icon: '🔧',
     items: [
-      {
-        subtitulo: 'Actualización Crítica',
-        texto:
-          'Implementar ventanas de mantenimiento prioritarias para entornos On-Premise. Ante vulnerabilidades con puntuación CVSS superior a 8.5, el despliegue de parches en servidores como GitHub Enterprise Server (GHES) debe ejecutarse en un plazo menor a 24 horas desde la liberación del exploit.',
-      },
-      {
-        subtitulo: 'Hardening de Componentes Internos',
-        texto:
-          'Restringir las capacidades de ejecución de los entornos aislados (sandboxes). Configurar los servicios de backend (como los proxies de Git) bajo el principio de menor privilegio, impidiendo que variables de entorno de nivel de aplicación puedan reescribir rutas del sistema operativo.',
-      },
+      { subtitulo: 'Actualización Crítica', texto: 'Implementar ventanas de mantenimiento prioritarias para entornos On-Premise. Ante vulnerabilidades con puntuación CVSS superior a 8.5, el despliegue de parches en servidores como GitHub Enterprise Server (GHES) debe ejecutarse en un plazo menor a 24 horas desde la liberación del exploit.' },
+      { subtitulo: 'Hardening de Componentes Internos', texto: 'Restringir las capacidades de ejecución de los entornos aislados (sandboxes). Configurar los servicios de backend (como los proxies de Git) bajo el principio de menor privilegio, impidiendo que variables de entorno de nivel de aplicación puedan reescribir rutas del sistema operativo.' },
     ],
   },
   {
-    label: 'B',
+    icon: 'link',
     titulo: 'Seguridad en la Cadena de Suministro de Software (DevSecOps)',
-    icon: '🔗',
     items: [
-      {
-        subtitulo: 'Auditoría de Hooks',
-        texto:
-          'Monitorear y restringir el uso de scripts de ejecución automática (custom_hooks). Se debe deshabilitar la capacidad de que usuarios estándar inyecten o modifiquen parámetros de configuración global de Git mediante comandos ordinarios.',
-      },
-      {
-        subtitulo: 'Sanitización de Entradas Basada en Firmas',
-        texto:
-          'Implementar mecanismos de validación estricta a nivel de protocolo (capa de transporte de Git) para neutralizar secuencias de escape de directorios (path traversal) y cargas útiles (payloads) ocultas en metadatos como X-Stat.',
-      },
+      { subtitulo: 'Auditoría de Hooks', texto: 'Monitorear y restringir el uso de scripts de ejecución automática (custom_hooks). Se debe deshabilitar la capacidad de que usuarios estándar inyecten o modifiquen parámetros de configuración global de Git mediante comandos ordinarios.' },
+      { subtitulo: 'Sanitización de Entradas Basada en Firmas', texto: 'Implementar mecanismos de validación estricta a nivel de protocolo (capa de transporte de Git) para neutralizar secuencias de escape de directorios (path traversal) y cargas útiles (payloads) ocultas en metadatos como X-Stat.' },
     ],
   },
   {
-    label: 'C',
+    icon: 'assignment',
     titulo: 'Cumplimiento de Gobernanza y Reporte Operacional',
-    icon: '📋',
     items: [
-      {
-        subtitulo: 'Simulacros de Reporte ANCI',
-        texto:
-          'Diseñar e institucionalizar playbooks de respuesta a incidentes que contemplen la ventana de 3 horas dispuesta por la Ley N° 21.663. Las organizaciones deben automatizar la recolección de telemetría forense para cumplir con los requisitos informativos del CSIRT Nacional sin dilatar la mitigación técnica.',
-      },
-      {
-        subtitulo: 'Auditoría de Datos en Repositorios',
-        texto:
-          'Implementar herramientas de Escaneo de Secretos y DLP (Data Loss Prevention) para asegurar que ningún repositorio de código (público o privado) almacene Datos Sensibles bajo la Ley N° 19.628 o credenciales de producción en texto plano.',
-      },
+      { subtitulo: 'Simulacros de Reporte ANCI', texto: 'Diseñar e institucionalizar playbooks de respuesta a incidentes que contemplen la ventana de 3 horas dispuesta por la Ley N° 21.663. Las organizaciones deben automatizar la recolección de telemetría forense para cumplir con los requisitos informativos del CSIRT Nacional sin dilatar la mitigación técnica.' },
+      { subtitulo: 'Auditoría de Datos en Repositorios', texto: 'Implementar herramientas de Escaneo de Secretos y DLP (Data Loss Prevention) para asegurar que ningún repositorio de código (público o privado) almacene Datos Sensibles bajo la Ley N° 19.628 o credenciales de producción en texto plano.' },
     ],
   },
 ]
@@ -69,7 +44,7 @@ export default function Conclusiones() {
           {recomendaciones.map((rec, i) => (
             <div key={i} className="rec-item">
               <div className="rec-header">
-                <span className="rec-icon">{rec.icon}</span>
+                <Icon name={rec.icon} className="rec-icon" />
                 <h3>{rec.titulo}</h3>
               </div>
               <div className="rec-subitems">
@@ -98,24 +73,21 @@ export default function Conclusiones() {
             como un comando <code>git push</code> para comprometer servidores subyacentes— evidencia
             la fragilidad de la <strong>cadena de suministro digital</strong>. Un solo fallo de
             inyección en un componente lógico puede desencadenar un riesgo sistémico global,
-            exponiendo la propiedad intelectual y los datos de millones de organizaciones
-            simultáneamente.
+            exponiendo la propiedad intelectual y los datos de millones de organizaciones simultáneamente.
           </p>
           <p>
             En el contexto chileno, este caso expone la madurez obligatoria a la que se enfrenta el
-            país. La coexistencia de la <strong>Ley N° 21.459</strong> (Delitos Informáticos) y la{' '}
-            <strong>Ley N° 21.663</strong> (Ley Marco de Ciberseguridad) redefine el estándar de
-            diligencia exigido: ya no basta con ser una víctima pasiva de un ciberdelito; las
-            organizaciones ahora son legal y administrativamente responsables de su propia resiliencia
-            y de la velocidad con la que protegen los activos de sus usuarios.
+            país. La coexistencia de la <strong>Ley N° 21.459</strong> y la{' '}
+            <strong>Ley N° 21.663</strong> redefine el estándar de diligencia exigido: ya no basta
+            con ser una víctima pasiva de un ciberdelito; las organizaciones ahora son legal y
+            administrativamente responsables de su propia resiliencia.
           </p>
         </div>
-
         <div className="leyes-cierre">
-          <div className="ley-chip">Ley N° 21.459 — Delitos Informáticos</div>
-          <div className="ley-chip">Ley N° 21.663 — Ciberseguridad</div>
-          <div className="ley-chip">Ley N° 19.628 — Datos Personales</div>
-          <div className="ley-chip">CVE-2026-3854 — Caso GitHub RCE</div>
+          <span className="ley-chip">Ley N° 21.459 — Delitos Informáticos</span>
+          <span className="ley-chip">Ley N° 21.663 — Ciberseguridad</span>
+          <span className="ley-chip">Ley N° 19.628 — Datos Personales</span>
+          <span className="ley-chip">CVE-2026-3854 — Caso GitHub RCE</span>
         </div>
       </div>
     </article>

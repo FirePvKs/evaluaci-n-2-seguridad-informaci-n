@@ -450,3 +450,54 @@
   .prompt-result { grid-template-columns: 1fr; }
   .delito-card { flex-direction: column; }
 }
+
+/* =================== MATERIAL ICONS =================== */
+.material-icons {
+  font-size: 20px;
+  line-height: 1;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.actor-icon {
+  font-size: 28px !important;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.actor-emoji {
+  font-size: 32px !important;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rec-icon {
+  font-size: 20px !important;
+  color: var(--accent);
+}
+
+.eje-icon {
+  font-size: 18px !important;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.resp-icon {
+  font-size: 18px !important;
+  color: var(--accent);
+}
+
+.source-link-icon {
+  font-size: 14px !important;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.th-icon {
+  font-size: 14px !important;
+  vertical-align: middle;
+  margin-right: 3px;
+}

@@ -1,3 +1,5 @@
+import Icon from './Icon'
+
 const marcos = [
   {
     ley: 'Ley N° 21.663',
@@ -32,9 +34,9 @@ const marcos = [
 ]
 
 const ejes = [
-  { key: 'reporte', label: 'Eje 1: Obligación de Reporte', icon: '⏱' },
-  { key: 'estandares', label: 'Eje 2: Estándares Técnicos Exigidos', icon: '🔒' },
-  { key: 'sanciones', label: 'Eje 3: Régimen de Sanciones y Multas', icon: '⚖' },
+  { key: 'reporte',    label: 'Eje 1: Obligación de Reporte',          icon: 'schedule' },
+  { key: 'estandares', label: 'Eje 2: Estándares Técnicos Exigidos',   icon: 'lock' },
+  { key: 'sanciones',  label: 'Eje 3: Régimen de Sanciones y Multas',  icon: 'gavel' },
 ]
 
 export default function Comparacion() {
@@ -64,19 +66,15 @@ export default function Comparacion() {
               <tr>
                 <th>Marco / Ley</th>
                 <th>Industria / Ámbito</th>
-                <th>⏱ Reporte</th>
-                <th>🔒 Estándares</th>
-                <th>⚖ Sanciones</th>
+                <th><Icon name="schedule" className="th-icon" /> Reporte</th>
+                <th><Icon name="lock" className="th-icon" /> Estándares</th>
+                <th><Icon name="gavel" className="th-icon" /> Sanciones</th>
               </tr>
             </thead>
             <tbody>
               {marcos.map((m, i) => (
                 <tr key={i}>
-                  <td>
-                    <strong>{m.ley}</strong>
-                    <br />
-                    <small>{m.subtitulo}</small>
-                  </td>
+                  <td><strong>{m.ley}</strong><br /><small>{m.subtitulo}</small></td>
                   <td>{m.industria}</td>
                   <td>{m.reporte}</td>
                   <td>{m.estandares}</td>
@@ -99,7 +97,7 @@ export default function Comparacion() {
               <p className="marco-industria">{m.industria}</p>
               {ejes.map((eje) => (
                 <div key={eje.key} className="eje-item">
-                  <span className="eje-icon">{eje.icon}</span>
+                  <Icon name={eje.icon} className="eje-icon" />
                   <div>
                     <p className="eje-label">{eje.label}</p>
                     <p>{m[eje.key]}</p>

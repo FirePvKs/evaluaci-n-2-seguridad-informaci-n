@@ -1,3 +1,5 @@
+import Icon from './Icon'
+
 export default function Resumen() {
   return (
     <article className="prose-section">
@@ -79,7 +81,7 @@ export default function Resumen() {
         <h2 className="card-title">Actores Involucrados</h2>
         <div className="actors-grid">
           <div className="actor-card">
-            <div className="actor-icon">🔍</div>
+            <Icon name="manage_search" className="actor-icon" />
             <h3>Wiz Research</h3>
             <p>
               Responsable del descubrimiento y análisis del fallo mediante herramientas de
@@ -87,7 +89,7 @@ export default function Resumen() {
             </p>
           </div>
           <div className="actor-card">
-            <div className="actor-icon">🏢</div>
+            <Icon name="corporate_fare" className="actor-icon" />
             <h3>GitHub Inc. (Microsoft)</h3>
             <p>
               Entidad encargada de recibir el reporte, validar el riesgo y desarrollar los
@@ -95,7 +97,7 @@ export default function Resumen() {
             </p>
           </div>
           <div className="actor-card">
-            <div className="actor-icon">🌐</div>
+            <Icon name="public" className="actor-icon" />
             <h3>Organizaciones Afectadas</h3>
             <p>
               Administradores de TI y empresas globales que operan instancias locales de
