@@ -45,3 +45,15 @@ Cumplimiento estricto de la Gestión de Riesgo Operacional y Ciberseguridad. Exi
 Multas directas impuestas por la CMF que pueden alcanzar hasta el 30% de la entidad patrimonial o sumas millonarias fijadas en UF, además de amonestaciones públicas y restricciones operativas.
 
 aplica el formato md a está tabla
+
+## promt para el documento 05 
+Actores identificados y sus responsabilidades
+penales, civiles y administrativas, con cita de
+norma para el caso de la vulnerabilidad de github
+
+## promt usado para el documento 06
+Tratamiento de datos según la Ley 19.628:
+tipos, distinción personales/sensibles y derechos ARCO aplicado al caso de la vulnerabilidad de hithub
+
+## promt usado para el documento 07
+Recomendaciones de seguridad y reflexión final del análisis aplicalo al caso de la vulnerabilidad de github
