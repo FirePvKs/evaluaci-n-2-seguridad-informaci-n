@@ -59,7 +59,7 @@ export default function Marco() {
             <div><strong>Operadores de Importancia Vital:</strong> Si una empresa chilena utiliza GHES para gestionar infraestructura crítica, está obligada a aplicar parches de forma inmediata bajo apercibimiento de sanciones administrativas.</div>
           </div>
         </div>
-        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209325" target="_blank" rel="noopener noreferrer" className="source-link">
+        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1202434" target="_blank" rel="noopener noreferrer" className="source-link">
           <Icon name="link" className="source-link-icon" /> Fuente: Ley 21.663 — Biblioteca del Congreso Nacional (BCN)
         </a>
       </div>
