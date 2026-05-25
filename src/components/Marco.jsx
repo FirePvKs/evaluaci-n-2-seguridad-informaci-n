@@ -30,7 +30,7 @@ export default function Marco() {
             <div><strong>Interceptación Ilícita:</strong> La vulnerabilidad permitía acceder a repositorios privados de terceros en entornos compartidos; cualquier captura de datos sin autorización se encuadra en este tipo penal.</div>
           </div>
         </div>
-        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1175499" target="_blank" rel="noopener noreferrer" className="source-link">
+        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1177743" target="_blank" rel="noopener noreferrer" className="source-link">
           <Icon name="link" className="source-link-icon" /> Fuente: Ley 21.459 — Biblioteca del Congreso Nacional (BCN)
         </a>
       </div>
