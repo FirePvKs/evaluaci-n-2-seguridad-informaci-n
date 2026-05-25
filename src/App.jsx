@@ -37,6 +37,9 @@ export default function App() {
     <div className="app-shell">
       <header className="topnav">
         <div className="topnav-inner">
+          <div className="topnav-logo">
+            <img src="/logo.svg" alt="Logo" className="header-logo" />
+          </div>
           <span className="topnav-brand">
             <span className="brand-badge">TI3034</span>
             CVE-2026-3854
