@@ -103,7 +103,7 @@ export default function Marco() {
             <div><strong>Interrupción de Servicios Esenciales:</strong> Se considera efecto significativo si el incidente impide el normal funcionamiento de servicios de utilidad pública. Dado que GitHub es la base del CI/CD del sector tecnológico nacional, el impacto se considera <strong>crítico</strong>.</div>
           </div>
         </div>
-        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209325" target="_blank" rel="noopener noreferrer" className="source-link">
+        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1202434" target="_blank" rel="noopener noreferrer" className="source-link">
           <Icon name="link" className="source-link-icon" /> Fuente: Decreto 295 (Reglamento Ley 21.663) — BCN
         </a>
       </div>
