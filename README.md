@@ -1,16 +1,22 @@
-# React + Vite
+# Informe CVE-2026-3854 — Análisis Legal GitHub RCE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada como trabajo evaluativo para la asignatura TI3034 Fundamentos de Seguridad de la Información, INACAP Valparaíso, Otoño 2026.
 
-Currently, two official plugins are available:
+El informe analiza la vulnerabilidad de Ejecución Remota de Código (RCE) descubierta en GitHub en marzo de 2026 (CVE-2026-3854) desde una perspectiva legal chilena, cubriendo el marco normativo aplicable, tipificación de delitos según la Ley 21.459, comparación de marcos regulatorios por industria, responsabilidades legales de los actores involucrados y tratamiento de datos personales bajo la Ley 19.628.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Probar localmente
 
-## React Compiler
+Requisitos previos: Node.js instalado.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+git clone https://github.com/FirePvKs/evaluaci-n-2-seguridad-informaci-n.git
+cd evaluaci-n-2-seguridad-informaci-n
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+La aplicación estará disponible en `http://localhost:5173`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Sitio desplegado
+
+https://evaluaci-n-2-seguridad-informaci-n.vercel.app
