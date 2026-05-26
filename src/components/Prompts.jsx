@@ -193,6 +193,32 @@ const prompts = [
     corrigio:
       'Se creó un componente Icon.jsx reutilizable para simplificar el uso de los iconos en todos los componentes y mantener consistencia en el tamaño y estilo.',
   },
+  ,
+  {
+    numero: '15',
+    seccion: 'Espacio para imagen en el header',
+    archivo: 'src/App.jsx, src/App.css, public/logo.svg',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'necesito que incluyas e incorpores de forma efectiva en la esquina superior izquierda del header un espacio para una imagen la cual yo modificaré por lo que solo necesito el espacio ya adaptado, incluye este promt en el informe',
+    acepto:
+      'Se aceptó el espacio de 36x36px en la esquina izquierda del header, antes de la marca TI3034, con un archivo placeholder logo.svg en la carpeta public/ listo para reemplazar.',
+    corrigio:
+      'Se cambió el formato inicial de logo.png a logo.svg para que el espacio se renderizara correctamente sin necesidad de un archivo de imagen real durante el desarrollo.',
+  },
+  ,
+  {
+    numero: '16',
+    seccion: 'Footer con información del alumno',
+    archivo: 'src/App.jsx, src/App.css',
+    herramienta: 'Claude (claude.ai)',
+    prompt:
+      'necesito que añadas un footer a toda la pagina con informacion como nombre del alumno, semestre en que el va, carrera que estudia y link a mi perfil de github — Nombre: Vicente Paolo Thomás Urbina Riquelme, Semestre: tercero, Carrera: Ing Informatica, https://github.com/FirePvKs',
+    acepto:
+      'Se aceptó el footer con nombre completo, carrera, semestre, institución y un botón con icono SVG de GitHub que enlaza al perfil indicado.',
+    corrigio:
+      'No requirió correcciones.',
+  },
 ]
 
 const promptsGemini = prompts.filter(p => p.herramienta === 'Gemini')
