@@ -306,10 +306,10 @@
 .eje-label { font-weight: 600; color: var(--text-h); margin-bottom: 2px; font-size: 12px; }
 
 /* =================== RESPONSABILIDADES =================== */
-.actor-red-border    { border-left: 4px solid #c0392b; }
-.actor-orange-border { border-left: 4px solid #e67e22; }
-.actor-blue-border   { border-left: 4px solid #2980b9; }
-.actor-green-border  { border-left: 4px solid #27ae60; }
+.actor-red-border    {}
+.actor-orange-border {}
+.actor-blue-border   {}
+.actor-green-border  {}
 .actor-section { padding-left: 20px; }
 .actor-heading { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
 .actor-emoji { font-size: 32px; flex-shrink: 0; }
